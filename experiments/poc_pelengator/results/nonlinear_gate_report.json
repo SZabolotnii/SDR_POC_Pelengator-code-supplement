@@ -1,0 +1,81 @@
+{
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "primary_seed": 42,
+  "n_features": 19,
+  "clopper_pearson": true,
+  "auc": {
+    "logreg": {
+      "mean": 0.9825,
+      "std": 0.0031,
+      "per_seed": [
+        0.9818,
+        0.9827,
+        0.9795,
+        0.9801,
+        0.9883
+      ]
+    },
+    "random_forest": {
+      "mean": 0.988,
+      "std": 0.0041,
+      "per_seed": [
+        0.9906,
+        0.9887,
+        0.9824,
+        0.9845,
+        0.9939
+      ]
+    },
+    "svm_rbf": {
+      "mean": 0.9614,
+      "std": 0.0093,
+      "per_seed": [
+        0.9537,
+        0.9701,
+        0.9553,
+        0.9528,
+        0.9751
+      ]
+    }
+  },
+  "operating_primary_seed": {
+    "logreg": {
+      "accept_precision": 0.9514,
+      "accept_recall": 0.9133,
+      "accepts": true,
+      "n_neg": 1200,
+      "recall_at_fpr0": 0.91,
+      "fpr_upper_975_at_zero": 0.00307,
+      "precision_1pct_point_at_fpr0": 1.0,
+      "precision_1pct_lcb_at_fpr0": 0.7497
+    },
+    "random_forest": {
+      "accept_precision": 0.9522,
+      "accept_recall": 0.93,
+      "accepts": true,
+      "n_neg": 1200,
+      "recall_at_fpr0": 0.9067,
+      "fpr_upper_975_at_zero": 0.00307,
+      "precision_1pct_point_at_fpr0": 1.0,
+      "precision_1pct_lcb_at_fpr0": 0.749
+    },
+    "svm_rbf": {
+      "accept_precision": 0.9521,
+      "accept_recall": 0.9267,
+      "accepts": true,
+      "n_neg": 1200,
+      "recall_at_fpr0": 0.9,
+      "fpr_upper_975_at_zero": 0.00307,
+      "precision_1pct_point_at_fpr0": 1.0,
+      "precision_1pct_lcb_at_fpr0": 0.7476
+    }
+  },
+  "field_prior_1pct_lcb_shared": 0.7497,
+  "verdict": "At the field-safe FPR=0 point the 1%-prior precision lower bound is 0.75 for every classifier (capped by the 1200 negatives, not the model). The differentiator is recall retained there: logreg 0.91, random_forest 0.91, svm_rbf 0.90 -> logreg separates best. RandomForest also wins AUC in all seeds. So a nonlinear gate buys higher recall at a clean operating point, but does NOT lift the field-prior precision guarantee, which only more negatives can do."
+}

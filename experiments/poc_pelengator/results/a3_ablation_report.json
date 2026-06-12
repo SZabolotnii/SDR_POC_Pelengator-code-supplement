@@ -1,0 +1,32 @@
+{
+  "seed": 42,
+  "dsge_dim": 4,
+  "psd_dim": 15,
+  "groups": {
+    "full": {
+      "n_features": 19,
+      "test_roc_auc": 0.9818222222222222,
+      "tuned_threshold": 0.05097443939122496,
+      "precision": 0.9513888888888888,
+      "recall": 0.9133333333333333,
+      "verdict": "PASS"
+    },
+    "psd_only": {
+      "n_features": 15,
+      "test_roc_auc": 0.983975,
+      "tuned_threshold": 0.09155448917471079,
+      "precision": 0.9512195121951219,
+      "recall": 0.91,
+      "verdict": "PASS"
+    },
+    "dsge_only": {
+      "n_features": 4,
+      "test_roc_auc": 0.48136666666666666,
+      "tuned_threshold": 0.2040056043870157,
+      "precision": 0.4090909090909091,
+      "recall": 0.21,
+      "verdict": "FAIL"
+    }
+  },
+  "dsge_auc_gain_over_psd": -0.0022
+}

@@ -1,0 +1,78 @@
+{
+  "config": {
+    "window_size": 4096,
+    "n_spectral_bins": 16,
+    "dsge_basis": "fractional",
+    "dsge_mode": "re_im",
+    "dsge_n": 3,
+    "dsge_ridge": 0.01,
+    "lr_max_iter": 2000,
+    "lr_C": 1.0,
+    "threshold": 0.05097443939122496
+  },
+  "classes": [
+    {
+      "name": "DJI_Mavic_Pro",
+      "loaded": true,
+      "label": 1,
+      "n_windows": 1000,
+      "elapsed_s": 0.1
+    },
+    {
+      "name": "DJI_Inspire_2",
+      "loaded": true,
+      "label": 0,
+      "n_windows": 1000,
+      "elapsed_s": 0.04
+    },
+    {
+      "name": "DJI_Phantom_4",
+      "loaded": true,
+      "label": 0,
+      "n_windows": 1000,
+      "elapsed_s": 0.04
+    },
+    {
+      "name": "Parrot_Disco",
+      "loaded": true,
+      "label": 0,
+      "n_windows": 1000,
+      "elapsed_s": 0.04
+    },
+    {
+      "name": "Yuneec_Typhoon_H",
+      "loaded": true,
+      "label": 0,
+      "n_windows": 1000,
+      "elapsed_s": 0.04
+    }
+  ],
+  "n_train_windows": 3500,
+  "n_test_windows": 1500,
+  "n_train_pos": 700,
+  "n_test_pos": 300,
+  "fit_metadata": {
+    "n_train_windows": 3500,
+    "n_positive": 700,
+    "n_negative": 2800,
+    "feature_dim": 19,
+    "dsge_dim": 4,
+    "psd_dim": 15
+  },
+  "fit_seconds": 3.03,
+  "predict_seconds": 0.66,
+  "test_roc_auc": 0.9818222222222222,
+  "target_precision": 0.95,
+  "target_recall": 0.85,
+  "tuned": {
+    "threshold": 0.05097443939122496,
+    "precision": 0.9513888888888888,
+    "recall": 0.9133333333333333,
+    "qualifies_precision": true,
+    "qualifies_recall": true,
+    "accepts": true
+  },
+  "verdict": "PASS",
+  "model_path": "experiments/poc_pelengator/models/mavic_pro_fingerprint.pkl",
+  "seed": 42
+}

@@ -1,0 +1,109 @@
+{
+  "config": {
+    "theta_targets_deg": [
+      -60.0,
+      -30.0,
+      0.0,
+      30.0,
+      60.0
+    ],
+    "n_pairs": 60,
+    "window": 50,
+    "hac_lag": 5,
+    "snr_db": 25.0,
+    "seed": 0,
+    "abs_db_thr": 0.5,
+    "ci_width_thr": 1.0,
+    "min_consecutive": 3,
+    "accept_deg": 5.0
+  },
+  "geometry": {
+    "boresight_a_deg": 30.0,
+    "boresight_b_deg": -30.0,
+    "beamwidth_3db_deg": 60.0,
+    "spacing_m": 0.0625,
+    "fc_hz": 2412000000.0,
+    "pattern_floor_db": -60.0
+  },
+  "rows": [
+    {
+      "theta_target_deg": -60.0,
+      "theta_hat_deg": -60.00000000000165,
+      "abs_err_deg": 1.6484591469634324e-12,
+      "delta_db_median": -56.99036188720832,
+      "delta_db_se": 0.0009163903751233934,
+      "delta_db_ci95": [
+        -56.992157979353514,
+        -56.98856579506313
+      ],
+      "ci_width_db": 0.0035921842903832157,
+      "n_pairs": 60,
+      "null_triggered_after": null,
+      "accepts": true
+    },
+    {
+      "theta_target_deg": -30.0,
+      "theta_hat_deg": -30.000000000003354,
+      "abs_err_deg": 3.353761712787673e-12,
+      "delta_db_median": -60.00048664674867,
+      "delta_db_se": 0.0009143881348385636,
+      "delta_db_ci95": [
+        -60.00227881457498,
+        -59.99869447892236
+      ],
+      "ci_width_db": 0.00358433565261862,
+      "n_pairs": 60,
+      "null_triggered_after": null,
+      "accepts": true
+    },
+    {
+      "theta_target_deg": 0.0,
+      "theta_hat_deg": -5.059064278611913e-12,
+      "abs_err_deg": 5.059064278611913e-12,
+      "delta_db_median": 0.0009848595259176203,
+      "delta_db_se": 0.0011146225576270743,
+      "delta_db_ci95": [
+        -0.0011997605606193708,
+        0.0031694796124546116
+      ],
+      "ci_width_db": 0.004369240173073982,
+      "n_pairs": 60,
+      "null_triggered_after": 4,
+      "accepts": true
+    },
+    {
+      "theta_target_deg": 30.0,
+      "theta_hat_deg": 30.699999999993196,
+      "abs_err_deg": 0.6999999999931958,
+      "delta_db_median": 59.99851075878473,
+      "delta_db_se": 0.0006769190228084595,
+      "delta_db_ci95": [
+        59.99718402186911,
+        59.999837495700355
+      ],
+      "ci_width_db": 0.0026534738312449235,
+      "n_pairs": 60,
+      "null_triggered_after": null,
+      "accepts": true
+    },
+    {
+      "theta_target_deg": 60.0,
+      "theta_hat_deg": 59.99999999999153,
+      "abs_err_deg": 8.469669410260394e-12,
+      "delta_db_median": 56.98981843039183,
+      "delta_db_se": 0.0007848379768101323,
+      "delta_db_ci95": [
+        56.98828017621145,
+        56.99135668457221
+      ],
+      "ci_width_db": 0.0030765083607633414,
+      "n_pairs": 60,
+      "null_triggered_after": null,
+      "accepts": true
+    }
+  ],
+  "n_accept": 5,
+  "n_total": 5,
+  "verdict": "PASS",
+  "elapsed_seconds": 0.19
+}

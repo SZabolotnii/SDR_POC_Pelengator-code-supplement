@@ -1,0 +1,34 @@
+{
+  "seed": 42,
+  "dsge_dim": 4,
+  "psd_dim": 15,
+  "metric": "test_roc_auc",
+  "results": {
+    "dsge_only": {
+      "logreg": 0.48136666666666666,
+      "logreg_sec": 0.0,
+      "random_forest": 0.7448374999999999,
+      "random_forest_sec": 0.9,
+      "svm_rbf": 0.7238083333333333,
+      "svm_rbf_sec": 0.4
+    },
+    "psd_only": {
+      "logreg": 0.983975,
+      "logreg_sec": 0.0,
+      "random_forest": 0.9827388888888888,
+      "random_forest_sec": 1.0,
+      "svm_rbf": 0.9520805555555556,
+      "svm_rbf_sec": 0.0
+    },
+    "full": {
+      "logreg": 0.9818222222222222,
+      "logreg_sec": 0.0,
+      "random_forest": 0.9906152777777777,
+      "random_forest_sec": 1.2,
+      "svm_rbf": 0.9536833333333333,
+      "svm_rbf_sec": 0.0
+    }
+  },
+  "dsge_only_best_auc": 0.7448,
+  "dsge_only_nonlinear_signal": true
+}

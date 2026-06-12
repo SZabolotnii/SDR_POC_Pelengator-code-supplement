@@ -1,0 +1,60 @@
+# Configuration for the A5 end-to-end proxy pelengator demo.
+# Ribbon: real Tampere I/Q → packet_detector → fingerprint_filter → dual_channel_simulator → DifferentialEstimator → Averager → NullDetector.
+
+sources:
+  - name: DJI_Mavic_Pro
+    path: data/tampere_extract/DJI_mavic_pro_2G.bin
+    duration_s: 0.5            # 0.5 s × 120 MS/s ≈ 480 MB int16 → ≈250 bursts
+  - name: DJI_Inspire_2
+    path: data/tampere_extract/DJI_inspire_2_2G.bin
+    duration_s: 0.5
+
+fs_hz: 120.0e6
+theta_targets_deg: [-45.0, 0.0, 30.0, 60.0]
+
+geometry:
+  boresight_a_deg: 30.0
+  boresight_b_deg: -30.0
+  beamwidth_3db_deg: 60.0      # wide-beam patch (matches A4 acceptance geom)
+  spacing_m: 0.0625            # ~λ/2 at 2.412 GHz
+  fc_hz: 2.412e9
+  pattern_floor_db: -60.0
+
+simulator:
+  snr_db: 10.0                 # realistic field-style SNR; lets the per-burst Δ scatter and θ̂ convergence be visible in plots (acceptance still passes at this level)
+  multipath_taps: []           # list of {delay_s, gain_re, gain_im, theta_deg}; [] → no multipath
+
+burst_detector:
+  smoothing_us: 0.5
+  threshold_db: 8.0
+  hysteresis_db: 2.0
+  min_duration_us: 20.0
+  noise_quantile: 0.10
+  stft_nfft: 1024
+
+fingerprint:
+  model_path: experiments/poc_pelengator/models/mavic_pro_fingerprint.pkl
+  threshold: 0.5               # override saved threshold (0.051 was Bayes-optimal at 20% base rate; for proxy demo we want stricter precision)
+  aggregate: mean              # mean | max | median
+
+averager:
+  window: 25                   # narrower window → CI tightens visibly through the trace, instead of filling instantly and looking flat
+  hac_lag: 5
+  bucket_by_hop: false
+  bucket_step_hz: 1.0e6
+
+null_detector:
+  abs_db_thr: 0.5
+  ci_width_thr: 1.0
+  min_consecutive: 3
+
+acceptance:
+  accept_deg: 5.0
+  min_pass_count: 3            # plan §A5: ≥3 of 4 θ_target within accept_deg
+
+output:
+  results_dir: experiments/poc_pelengator/results
+  figures_dir: experiments/poc_pelengator/figures
+  log_jsonl: a5_proxy_log.jsonl
+  summary_json: a5_proxy_report.json
+  figure_prefix: a5_proxy_theta

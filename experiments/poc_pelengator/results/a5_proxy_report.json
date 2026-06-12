@@ -1,0 +1,120 @@
+{
+  "config_path": "/Users/docua/Project/Research/sdr-kunchenko/experiments/poc_pelengator/config.yaml",
+  "config": {
+    "sources": [
+      {
+        "name": "DJI_Mavic_Pro",
+        "path": "data/tampere_extract/DJI_mavic_pro_2G.bin",
+        "duration_s": 0.5
+      },
+      {
+        "name": "DJI_Inspire_2",
+        "path": "data/tampere_extract/DJI_inspire_2_2G.bin",
+        "duration_s": 0.5
+      }
+    ],
+    "fs_hz": "120.0e6",
+    "theta_targets_deg": [
+      -45.0,
+      0.0,
+      30.0,
+      60.0
+    ],
+    "geometry": {
+      "boresight_a_deg": 30.0,
+      "boresight_b_deg": -30.0,
+      "beamwidth_3db_deg": 60.0,
+      "spacing_m": 0.0625,
+      "fc_hz": "2.412e9",
+      "pattern_floor_db": -60.0
+    },
+    "simulator": {
+      "snr_db": 10.0,
+      "multipath_taps": []
+    },
+    "burst_detector": {
+      "smoothing_us": 0.5,
+      "threshold_db": 8.0,
+      "hysteresis_db": 2.0,
+      "min_duration_us": 20.0,
+      "noise_quantile": 0.1,
+      "stft_nfft": 1024
+    },
+    "fingerprint": {
+      "model_path": "experiments/poc_pelengator/models/mavic_pro_fingerprint.pkl",
+      "threshold": 0.5,
+      "aggregate": "mean"
+    },
+    "averager": {
+      "window": 25,
+      "hac_lag": 5,
+      "bucket_by_hop": false,
+      "bucket_step_hz": "1.0e6"
+    },
+    "null_detector": {
+      "abs_db_thr": 0.5,
+      "ci_width_thr": 1.0,
+      "min_consecutive": 3
+    },
+    "acceptance": {
+      "accept_deg": 5.0,
+      "min_pass_count": 3
+    },
+    "output": {
+      "results_dir": "experiments/poc_pelengator/results",
+      "figures_dir": "experiments/poc_pelengator/figures",
+      "log_jsonl": "a5_proxy_log.jsonl",
+      "summary_json": "a5_proxy_report.json",
+      "figure_prefix": "a5_proxy_theta"
+    }
+  },
+  "n_total_bursts": 279,
+  "n_kept_total": 123,
+  "log_jsonl_rows": 279,
+  "per_theta": [
+    {
+      "theta_target_deg": -45.0,
+      "n_kept": 123,
+      "delta_db_median_final": -59.31328679973433,
+      "delta_db_se_final": 0.0009165391090054338,
+      "theta_hat_deg": -45.0000000000025,
+      "abs_err_deg": 2.5011104298755527e-12,
+      "null_triggered_at_t_s": null,
+      "accepts": true
+    },
+    {
+      "theta_target_deg": 0.0,
+      "n_kept": 123,
+      "delta_db_median_final": 0.0003005265414782629,
+      "delta_db_se_final": 0.0011076865316261655,
+      "theta_hat_deg": -5.059064278611913e-12,
+      "abs_err_deg": 5.059064278611913e-12,
+      "null_triggered_at_t_s": 0.011028658333333333,
+      "accepts": true
+    },
+    {
+      "theta_target_deg": 30.0,
+      "n_kept": 123,
+      "delta_db_median_final": 60.00124072385191,
+      "delta_db_se_final": 0.0013909475299521293,
+      "theta_hat_deg": 29.999999999993236,
+      "abs_err_deg": 6.764366844436154e-12,
+      "null_triggered_at_t_s": null,
+      "accepts": true
+    },
+    {
+      "theta_target_deg": 60.0,
+      "n_kept": 123,
+      "delta_db_median_final": 56.99157223759595,
+      "delta_db_se_final": 0.0011507008099786355,
+      "theta_hat_deg": 59.99999999999153,
+      "abs_err_deg": 8.469669410260394e-12,
+      "null_triggered_at_t_s": null,
+      "accepts": true
+    }
+  ],
+  "n_accept": 4,
+  "min_pass_count": 3,
+  "verdict": "PASS",
+  "elapsed_seconds": 59.9
+}

@@ -1,0 +1,94 @@
+{
+  "geometry": {
+    "boresight_a_deg": 30.0,
+    "boresight_b_deg": -30.0,
+    "beamwidth_3db_deg": 60.0,
+    "pattern_floor_db": -60.0
+  },
+  "slope_threshold_db_per_deg": 0.3,
+  "se_levels_db": [
+    0.0009,
+    0.5,
+    1.0
+  ],
+  "well_conditioned_interval_deg": [
+    -29.960000000011746,
+    29.959999999976333
+  ],
+  "max_abs_slope_db_per_deg": 150.5152,
+  "theta_at_max_slope_deg": -29.94,
+  "per_theta": [
+    {
+      "theta_deg": -45.0,
+      "delta_db": -59.3123,
+      "abs_slope_db_per_deg": 0.0942,
+      "saturated": true,
+      "well_conditioned": false,
+      "sigma_theta_deg": {
+        "0.0009dB": 0.01,
+        "0.5dB": 5.308,
+        "1dB": 10.617
+      }
+    },
+    {
+      "theta_deg": 0.0,
+      "delta_db": -0.0,
+      "abs_slope_db_per_deg": 0.4548,
+      "saturated": false,
+      "well_conditioned": true,
+      "sigma_theta_deg": {
+        "0.0009dB": 0.002,
+        "0.5dB": 1.099,
+        "1dB": 2.199
+      }
+    },
+    {
+      "theta_deg": 30.0,
+      "delta_db": 60.0,
+      "abs_slope_db_per_deg": 0.0,
+      "saturated": true,
+      "well_conditioned": false,
+      "sigma_theta_deg": {
+        "0.0009dB": null,
+        "0.5dB": null,
+        "1dB": null
+      }
+    },
+    {
+      "theta_deg": 60.0,
+      "delta_db": 56.9897,
+      "abs_slope_db_per_deg": 0.2274,
+      "saturated": true,
+      "well_conditioned": false,
+      "sigma_theta_deg": {
+        "0.0009dB": 0.004,
+        "0.5dB": 2.199,
+        "1dB": 4.398
+      }
+    },
+    {
+      "theta_deg": -30.0,
+      "delta_db": -60.0,
+      "abs_slope_db_per_deg": 0.0,
+      "saturated": true,
+      "well_conditioned": false,
+      "sigma_theta_deg": {
+        "0.0009dB": null,
+        "0.5dB": null,
+        "1dB": null
+      }
+    },
+    {
+      "theta_deg": 30.0,
+      "delta_db": 60.0,
+      "abs_slope_db_per_deg": 0.0,
+      "saturated": true,
+      "well_conditioned": false,
+      "sigma_theta_deg": {
+        "0.0009dB": null,
+        "0.5dB": null,
+        "1dB": null
+      }
+    }
+  ]
+}

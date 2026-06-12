@@ -1,0 +1,89 @@
+{
+  "test_base_rate": 0.2,
+  "operating_thresholds": {
+    "a3_tuned": 0.051,
+    "a5_demo": 0.5
+  },
+  "precision_vs_prior": {
+    "0.2": {
+      "thr_a3_0.051": {
+        "recall": 0.9133,
+        "fpr": 0.01083,
+        "precision": 0.9547
+      },
+      "thr_a5_0.5": {
+        "recall": 0.91,
+        "fpr": 0.0,
+        "precision": 1.0
+      }
+    },
+    "0.1": {
+      "thr_a3_0.051": {
+        "recall": 0.9133,
+        "fpr": 0.01083,
+        "precision": 0.9035
+      },
+      "thr_a5_0.5": {
+        "recall": 0.91,
+        "fpr": 0.0,
+        "precision": 1.0
+      }
+    },
+    "0.05": {
+      "thr_a3_0.051": {
+        "recall": 0.9133,
+        "fpr": 0.01083,
+        "precision": 0.8161
+      },
+      "thr_a5_0.5": {
+        "recall": 0.91,
+        "fpr": 0.0,
+        "precision": 1.0
+      }
+    },
+    "0.02": {
+      "thr_a3_0.051": {
+        "recall": 0.9133,
+        "fpr": 0.01083,
+        "precision": 0.6324
+      },
+      "thr_a5_0.5": {
+        "recall": 0.91,
+        "fpr": 0.0,
+        "precision": 1.0
+      }
+    },
+    "0.01": {
+      "thr_a3_0.051": {
+        "recall": 0.9133,
+        "fpr": 0.01083,
+        "precision": 0.4599
+      },
+      "thr_a5_0.5": {
+        "recall": 0.91,
+        "fpr": 0.0,
+        "precision": 1.0
+      }
+    },
+    "0.005": {
+      "thr_a3_0.051": {
+        "recall": 0.9133,
+        "fpr": 0.01083,
+        "precision": 0.2976
+      },
+      "thr_a5_0.5": {
+        "recall": 0.91,
+        "fpr": 0.0,
+        "precision": 1.0
+      }
+    }
+  },
+  "recalibration": {
+    "field_prior": 0.01,
+    "target_precision": 0.95,
+    "recalibrated_threshold": 0.1975,
+    "recall_at_recal": 0.91,
+    "fpr_at_recal": 0.0,
+    "precision_at_recal": 1.0
+  }
+}
