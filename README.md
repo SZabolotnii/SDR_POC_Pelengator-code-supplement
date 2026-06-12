@@ -2,8 +2,8 @@
 
 Verification code supplement for the manuscript
 
-> S. V. Zabolotnii, *"Software concept of a dual-channel SDR direction finder
-> for DJI Mavic signals: a quantitative error budget based on open data"*,
+> *"Software concept of a dual-channel SDR direction finder for DJI Mavic
+> signals: a quantitative error budget based on open data"*,
 > submitted to **Herald of Advanced Information Technology**.
 
 This repository contains everything needed to verify every numerical result
